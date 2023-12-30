@@ -50,7 +50,7 @@ def register():
     if existing_user:
         return jsonify(resultado=False, message='Usuário já existe')
 
-    novo_usuario = Usuarios(usuario=usuario, senha=senha)
+    novo_usuario = Usuarios(usuario=usuario, perfil='admin', senha=senha)
     db.session.add(novo_usuario)
     db.session.commit()
 
